@@ -58,8 +58,6 @@ export default {
     NavComponent,
     HeaderComponent,
     FooterComponent,
-    AboutComponent,
-    CardComponent,
   },
 };
 </script>
