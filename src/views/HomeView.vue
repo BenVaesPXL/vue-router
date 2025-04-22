@@ -1,13 +1,28 @@
-<script>
-import NavComponent from "@/components/NavComponent.vue";
-import HeaderComponent from "@/components/HeaderComponent.vue";
-import FooterComponent from "@/components/FooterComponent.vue";
+<template>
+  <div>
+    <AboutComponent />
 
+    <section class="gallery">
+      <div class="cards-wrapper">
+        <CardComponent
+          v-for="product in products"
+          v-bind:key="product.id"
+          v-bind:product="product"
+        />
+      </div>
+    </section>
+  </div>
+</template>
+<script>
+import AboutComponent from "@/components/AboutComponent.vue";
+import CardComponent from "@/components/CardComponent.vue";
 export default {
+  components: {
+    AboutComponent,
+    CardComponent,
+  },
   data() {
     return {
-      mainTitle: "Snaky Sneakers",
-      subTitle: "Sneaker Reseller",
       products: [
         {
           id: 1,
@@ -54,19 +69,6 @@ export default {
       ],
     };
   },
-  components: {
-    NavComponent,
-    HeaderComponent,
-    FooterComponent,
-    AboutComponent,
-    CardComponent,
-  },
 };
 </script>
-
-<template>
-  <NavComponent />
-  <HeaderComponent :mainTitle="mainTitle" :subTitle="subTitle" />
-  <router-view></router-view>
-  <FooterComponent :mainTitle="mainTitle" :subTitle="subTitle" />
-</template>
+<style lang="scss"></style>
