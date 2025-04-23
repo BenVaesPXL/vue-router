@@ -1,6 +1,7 @@
 <template lang="">
   <div>
     <h2>{{ Title }}</h2>
+    <h2>{{ productName }}</h2>
   </div>
 </template>
 <script>
@@ -9,6 +10,11 @@ export default {
     return {
       Title: "product view",
     };
+  },
+  computed: {
+    productName() {
+      return this.$route.params.title;
+    },
   },
 };
 </script>
