@@ -13,7 +13,7 @@ export default {
   },
   computed: {
     productName() {
-      return this.$route.params.title;
+      return this.$route.query.pn;
     },
   },
 };

@@ -10,8 +10,7 @@ export default {
     GoToProduct() {
       this.$router.push({
         name: "product",
-        params: { id: this.product.id },
-        query: { title: this.product.title },
+        query: { pn: this.product.title },
       });
     },
   },
